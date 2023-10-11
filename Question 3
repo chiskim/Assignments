@@ -1,0 +1,43 @@
+# Function to get the grade based on the average mark
+def get_grade(average_mark):
+    if 80 <= average_mark <= 100:
+        return "A"
+    elif 70 <= average_mark < 80:
+        return "B"
+    elif 60 <= average_mark < 70:
+        return "C"
+    elif 50 <= average_mark < 60:
+        return "D"
+    elif 0 <= average_mark < 50:
+        return "E"
+    else:
+        return "Invalid"
+
+# Function to print the grade based on the average mark
+def grade(average_mark):
+    grade_value = get_grade(average_mark)
+    if grade_value == "Invalid":
+        print("Invalid average mark. Please enter a value between 0 and 100.")
+    else:
+        print(f"Grade: {grade_value}")
+
+def main():
+    try:
+        marks = [float(input("Enter mark for Subject 1: ")),
+                 float(input("Enter mark for Subject 2: ")),
+                 float(input("Enter mark for Subject 3: "))]
+        
+        average_mark = sum(marks) / len(marks)
+        
+        # Using the get_grade function
+        grade_value = get_grade(average_mark)
+        print(f"Using get_grade function: Grade = {grade_value}")
+
+        # Using the grade function
+        grade(average_mark)
+    
+    except ValueError:
+        print("Invalid input. Please enter numeric marks for each subject.")
+
+if __name__ == "__main__":
+    main()
