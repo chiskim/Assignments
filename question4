@@ -1,0 +1,38 @@
+# Function to calculate the tax amount
+def calc_tax(gross_pay):
+    if gross_pay >= 50000:
+        tax_rate = 0.35
+    elif gross_pay >= 40000:
+        tax_rate = 0.30
+    elif gross_pay >= 20000:
+        tax_rate = 0.25
+    elif gross_pay >= 12000:
+        tax_rate = 0.15
+    else:
+        tax_rate = 0
+
+    tax_amount = gross_pay * tax_rate
+    return tax_amount
+
+def main():
+    try:
+        gross_pay = float(input("Enter the gross pay: "))
+        
+        if gross_pay < 0:
+            print("Gross pay cannot be negative.")
+        else:
+            # Calculate the tax amount using the calc_tax function
+            tax_amount = calc_tax(gross_pay)
+            
+            # Calculate the net pay
+            net_pay = gross_pay - tax_amount
+            
+            print(f"Gross Pay: ${gross_pay:.2f}")
+            print(f"Tax Amount: ${tax_amount:.2f}")
+            print(f"Net Pay: ${net_pay:.2f}")
+    
+    except ValueError:
+        print("Invalid input. Please enter a numeric gross pay.")
+
+if __name__ == "__main__":
+    main()
