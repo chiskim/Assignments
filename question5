@@ -1,0 +1,21 @@
+# Function to check if a number is even
+def is_odd_even(x):
+    if x % 2 == 0:
+        return True
+    else:
+        return False
+
+def main():
+    try:
+        user_input = int(input("Enter a number: "))
+        
+        if is_odd_even(user_input):
+            print("The number is even.")
+        else:
+            print("The number is odd")
+    
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
+
+if __name__ == "__main__":
+    main()
