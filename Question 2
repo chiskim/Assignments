@@ -16,7 +16,8 @@ def main():
     print("3. Right-Angled Triangle")
     
     choice = int(input("Enter the number corresponding to the figure you want to calculate the area for: "))
-    
+    return choice
+choice=main()
     if choice == 1:
         length = float(input("Enter the length of the rectangle: "))
         width = float(input("Enter the width of the rectangle: "))
@@ -36,8 +37,6 @@ def main():
         dimensions = f"Base: {base}, Height: {height}"
     else:
         print("Invalid choice. Please select 1, 2, or 3.")
-        return
-
     print(f"Type of Figure: {figure_type}")
     print(f"Dimensions: {dimensions}")
     print(f"Area: {area:.2f}")
